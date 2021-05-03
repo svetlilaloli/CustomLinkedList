@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Text;
 
 namespace CustomLinkedList
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             var myList = new LinkedList<int>();
 

@@ -113,11 +113,6 @@ namespace CustomLinkedList
             return GetEnumerator();
         }
 
-        IEnumerator<Node<T>> IEnumerable<Node<T>>.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
         public Node<T> this[int index]
         {
             get {
