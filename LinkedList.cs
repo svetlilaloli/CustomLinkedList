@@ -1,6 +1,9 @@
-﻿namespace CustomLinkedList
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace CustomLinkedList
 {
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<Node<T>>
     {
         public Node<T> First { get; private set; }
         public Node<T> Last { get; private set; }
@@ -96,6 +99,25 @@
             }
             Count--;
         }
+
+        public IEnumerator<Node<T>> GetEnumerator()
+        {
+            for (var node = First; node != null; node = node.Next)
+            {
+                yield return node;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        IEnumerator<Node<T>> IEnumerable<Node<T>>.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         public Node<T> this[int index]
         {
             get {

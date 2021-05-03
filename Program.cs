@@ -8,6 +8,7 @@ namespace CustomLinkedList
         static void Main()
         {
             var myList = new LinkedList<int>();
+
             for (int i = 0; i < 5; i++)
             {
                 myList.PushFirst(i);
@@ -23,13 +24,11 @@ namespace CustomLinkedList
             myList.InsertBefore(myList.First, 100);
             myList.InsertAfter(myList.First, 1000);
             myList.InsertBefore(myList.Last, 1000);
-            
-            var line = new StringBuilder();
-            for (var node = myList.First; node != null; node = node.Next)
+
+            foreach (Node<int> node in myList)
             {
-                line.Append($" {node.Value}");
+                Console.WriteLine(node.Value);
             }
-            Console.WriteLine(line);
         }
     }
 }
